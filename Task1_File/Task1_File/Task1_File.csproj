@@ -46,7 +46,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servises\ChangeFile.cs" />
-    <Compile Include="Servises\ReadFromFile.cs" />
+    <Compile Include="Servises\FileWork.cs" />
     <Compile Include="Servises\ShowFile.cs" />
     <Compile Include="Servises\WordCount.cs" />
     <Compile Include="Servises\WrapLetters.cs" />

@@ -7,22 +7,19 @@ using System.Threading.Tasks;
 
 namespace Task1_File.Servises
 {
-    public class ReadFromFile
+    public class FileWork
     {       
-        public string FromFile()
+        public string ReadFromFile()
         {
             string line;
 
-            string path = @"C:\Users\vladb\source\repos\Alex_Soft\Task1_File\File.txt";
+            string path = @"D:\File.txt";
 
             try
             {
                 using (StreamReader sr = new StreamReader(path, Encoding.Default))
                 {
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        line = sr.ReadLine();
-                    }
+                    line = sr.ReadToEnd();
                     return line;
                 }
             }
