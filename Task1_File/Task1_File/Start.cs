@@ -49,6 +49,8 @@ namespace Task1_File
                         break;
                     case "count":
                         WordCount test1 = new WordCount();
+                        test1.Count();
+                        test1.ShowIndexWords(10);
                         break;
                     case "wrap":
                         WrapLetters test2 = new WrapLetters();
