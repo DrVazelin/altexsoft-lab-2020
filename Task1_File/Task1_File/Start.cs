@@ -54,6 +54,8 @@ namespace Task1_File
                         break;
                     case "wrap":
                         WrapLetters test2 = new WrapLetters();
+                        test2.BreakIntoWords();
+                        test2.WrapInSentence();
                         break;
                     case "file":
                         ShowFile test3 = new ShowFile();

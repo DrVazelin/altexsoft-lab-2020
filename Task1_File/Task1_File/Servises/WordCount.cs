@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task1_File.Servises
 {
@@ -15,19 +11,25 @@ namespace Task1_File.Servises
         {
             FileWork File = new FileWork();
             str = File.ReadFromFile(path);
+
+            Console.WriteLine("You decide to count words in file");
         }
 
         // Перед первым и после последнего слова нет пробелов - поэтому +2, по хорошему надо было делать Trim ?
+        // или лучше проверять на наличие пробелов перед первым и после последнего слова ?
+
         internal int Count()
         {
             string[] textMass;
             textMass= str.Split(' ');
 
-            Console.WriteLine(textMass.Length+2);
+            Console.WriteLine("Words in file: {0}", textMass.Length+2);
             return textMass.Length+2;
         }
+
         internal void ShowIndexWords(int index)
         {
+            Console.WriteLine("You wont to see {0} words, is in't ?", index);
             string[] textMass;
             textMass = str.Split(' ');
 

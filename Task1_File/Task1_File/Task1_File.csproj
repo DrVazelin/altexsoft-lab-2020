@@ -48,6 +48,7 @@
     <Compile Include="Servises\ChangeFile.cs" />
     <Compile Include="Servises\FileWork.cs" />
     <Compile Include="Servises\ShowFile.cs" />
+    <Compile Include="Servises\TextWork.cs" />
     <Compile Include="Servises\WordCount.cs" />
     <Compile Include="Servises\WrapLetters.cs" />
     <Compile Include="Start.cs" />
