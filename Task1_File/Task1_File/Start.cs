@@ -11,7 +11,7 @@ namespace Task1_File
             Console.WriteLine("\t this program presents the basic steps " +
                 "of working with a file");
         }
-
+        string path = @"C:\Users\vladb\source";
         protected string Choise;
         internal void UserChoise()
         {
@@ -59,6 +59,8 @@ namespace Task1_File
                         break;
                     case "file":
                         ShowFile test3 = new ShowFile();
+                        test3.ProcessDirectory();
+                        test3.SeeDirectories();
                         break;
                     case "q":
                         Console.WriteLine("Your decided exit");
