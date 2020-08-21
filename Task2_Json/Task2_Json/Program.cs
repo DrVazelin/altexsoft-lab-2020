@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Task2_Json;
 
-namespace Task2_Json
+namespace HelloApp
 {
+
     class Program
     {
         static void Main(string[] args)
         {
+            Startup demo = new Startup();
+            demo.ShowСategories();
         }
     }
 }
