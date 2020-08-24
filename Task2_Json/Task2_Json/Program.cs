@@ -1,9 +1,7 @@
 ﻿using System;
-using Task2_Json;
 
-namespace HelloApp
+namespace Task2_Json
 {
-
     class Program
     {
         static void Main(string[] args)

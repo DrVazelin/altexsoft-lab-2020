@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Task2_Json.Services;
 
 namespace Task2_Json
 {
@@ -51,7 +52,8 @@ namespace Task2_Json
                 switch (choice)
                 {
                     case "salad":
-
+                        Salads salad = new Salads();
+                        salad.ShowRecipes();
                         break;
                     case "first":
 
