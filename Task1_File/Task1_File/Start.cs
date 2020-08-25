@@ -5,14 +5,16 @@ namespace Task1_File
 {
     internal class Start
     {
+        string path = @"C:\Users\vladb\source";
+        protected string Choise;
+
         internal void Hellow()
         {
             Console.WriteLine("\t Welcome to Task 1!");
             Console.WriteLine("\t this program presents the basic steps " +
                 "of working with a file");
         }
-        string path = @"C:\Users\vladb\source";
-        protected string Choise;
+
         internal void UserChoise()
         {
             while (true)
