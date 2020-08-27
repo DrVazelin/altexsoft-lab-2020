@@ -52,7 +52,7 @@ namespace Task2_Json
                 switch (choice)
                 {
                     case "salad":
-                        Salads salad = new Salads();
+                        Salads salad = new Salads(name,choice);
                         salad.ShowRecipes();
                         break;
                     case "first":

@@ -13,18 +13,19 @@ namespace Task2_Json.Services
     class Salads : Categories
     {
         public override string patch { get; set; }
-        public Salads()
+        public Salads(string nama,string category)
         {
+            Сonfirm(nama,category);
             patch = @"C:\Users\vladb\source\enCore\altexsoft-lab-2020_V2\altexsoft-lab-2020\Task2_Json\Json_DB\Categories\salate.json";
         }
-
+        
         public override void ShowRecipes()
-        {
+        {            
             Console.WriteLine(patch);
-            Recipe salate = new Recipe();
+            ColectionRecipe salates = new ColectionRecipe();
             string jsonString = File.ReadAllText(patch);
-            salate = JsonSerializer.Deserialize<Recipe>(jsonString);
-            Console.WriteLine(salate.Name);
+            salates = JsonSerializer.Deserialize<ColectionRecipe>(jsonString);
+            Console.WriteLine(salates.ListRecipe[0].Name);
         }
     }
 }

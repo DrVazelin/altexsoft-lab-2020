@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace Task2_Json.Services
 {
-    abstract class Categories
+    public abstract class Categories
     {
         public abstract string patch { get; set; }
+        public void Сonfirm(string name, string category)
+        {
+            Console.WriteLine("Hellow "+name+", your choise "+ category+ "category. ");
+        }
         public abstract void ShowRecipes();
     }
 }

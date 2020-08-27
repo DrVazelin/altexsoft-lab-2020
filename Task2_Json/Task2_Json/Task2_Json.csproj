@@ -80,6 +80,7 @@
     <Compile Include="Services\MainCourses.cs" />
     <Compile Include="Services\Salates.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Structures\ColectionRecipe.cs" />
     <Compile Include="Structures\Recipe.cs" />
     <Compile Include="Structures\Сategories.cs" />
   </ItemGroup>
