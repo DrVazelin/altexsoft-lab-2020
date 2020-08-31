@@ -2,17 +2,24 @@
 
 namespace Task1_File.Servises
 {
-    public class WordCount
+    public class Word
     {
-        string path = @"C:\Users\vladb\source\enCore\altexsoft-lab-2020\Task1_File\File.txt";
+        string path = Environment.CurrentDirectory + @"\File.txt";
 
         string str;
-        public WordCount()
+        public Word()
         {
-            FileWork File = new FileWork();
-            str = File.ReadFromFile(path);
-
             Console.WriteLine("You decide to count words in file");
+
+            File File = new File();
+            str = File.ReadFromFile(path);
+            if (str == null) { Console.WriteLine("File not found"); }
+            else
+            {
+                Count();
+                ShowWords(10);
+            }
+
         }
 
         // Перед первым и после последнего слова нет пробелов - поэтому +2, по хорошему надо было делать Trim ?
@@ -27,7 +34,7 @@ namespace Task1_File.Servises
             return textMass.Length+2;
         }
 
-        internal void ShowIndexWords(int index)
+        internal void ShowWords(int index)
         {
             Console.WriteLine("You wont to see {0} words, is in't ?", index);
             string[] textMass;

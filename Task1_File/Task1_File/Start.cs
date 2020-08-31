@@ -5,8 +5,7 @@ namespace Task1_File
 {
     internal class Start
     {
-        string path = @"C:\Users\vladb\source";
-        protected string Choise;
+        protected string choise;
 
         internal void Hellow()
         {
@@ -41,26 +40,22 @@ namespace Task1_File
                 Console.WriteLine("if your wont to exit push q");
 
 
-                Choise = Console.ReadLine();
+                choise = Console.ReadLine();
 
-                switch (Choise)
+                switch (choise)
                 {
                     case "change":
-                        ChangeFile test = new ChangeFile();
+                        FileCheges test = new FileCheges();
                         test.Delete(); 
                         break;
                     case "count":
-                        WordCount test1 = new WordCount();
-                        test1.Count();
-                        test1.ShowIndexWords(10);
+                        Word test1 = new Word();
                         break;
                     case "wrap":
-                        WrapLetters test2 = new WrapLetters();
-                        test2.BreakIntoWords();
-                        test2.WrapInSentence();
+                        Letters test2 = new Letters();
                         break;
                     case "file":
-                        ShowFile test3 = new ShowFile();
+                        FileExplorer test3 = new FileExplorer();
                         test3.ProcessDirectory();
                         test3.SeeDirectories();
                         break;
@@ -72,7 +67,7 @@ namespace Task1_File
                         break;
                 }
                 Console.ReadLine();
-                if (Choise == "q") break;
+                if (choise == "q") break;
             }
 
         }

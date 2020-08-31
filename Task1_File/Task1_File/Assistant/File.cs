@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Task1_File.Servises
 {
-    class FileWork
+    class File
     {
-        string path = @"C:\Users\vladb\source\enCore\altexsoft-lab-2020\Task1_File";
+        string path = Environment.CurrentDirectory;
 
         internal string ReadFromFile(string path)
         {
@@ -24,7 +24,7 @@ namespace Task1_File.Servises
             {
                 Console.WriteLine("The file couldn't be read:");
                 Console.WriteLine(e.Message);
-                return "File not found";
+                return null;
             }
 
         }

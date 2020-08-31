@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Task1_File.Assistant;
 
 namespace Task1_File.Servises
 {
-    class ShowFile
+    class FileExplorer
     {
         string path = @"D:\";
         string[] dirs;
@@ -20,6 +17,11 @@ namespace Task1_File.Servises
             try
             {
                 dirs = Directory.GetDirectories(path);
+
+                //Сортировка по алфавиту
+                Sort dirsSort = new Sort();
+                dirs=dirsSort.AlphabetSortMass(dirs);
+
                 Console.WriteLine("The number of files in directory {0} is {1}.",path, dirs.Length);
                 foreach (string dir in dirs)
                 {
@@ -44,8 +46,15 @@ namespace Task1_File.Servises
                 if (choice < 0 || choice > dirs.Length) Console.WriteLine("Invalide data");
                 else
                 {
-                    Console.WriteLine("@" + dirs[choice]);
-                    files = Directory.GetFiles("@"+dirs[choice]);
+                    Console.WriteLine(dirs[choice]+" :");
+                    Console.WriteLine();
+
+                    files = Directory.GetFiles(dirs[choice]);
+
+                    //Сортировка по алфавиту
+                    Sort dirsSort = new Sort();
+                    files = dirsSort.AlphabetSortMass(files);
+
                     foreach (string file in files)
                     {
                         Console.WriteLine(file);

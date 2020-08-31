@@ -1,40 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Task1_File.Servises
 {
-    public class WrapLetters
+    public class Letters
     {
         string str;
-        string path= @"C:\Users\vladb\source\enCore\altexsoft-lab-2020\Task1_File\File.txt";
+        string path= Environment.CurrentDirectory + @"\File.txt";
         string[] textMass;
 
-        public WrapLetters()
+        public Letters()
         {
-            FileWork File = new FileWork();
+            Console.WriteLine("You decide to swap letters");
+
+            File File = new File();
             str = File.ReadFromFile(path);
 
-            Console.WriteLine("You decide to swap letters in file");
+            if(str == null) { Console.WriteLine("File not found"); }
+            else
+            {
+                BreakIntoWords();
+                WrapInSentence(3);
+            }
         }
 
         public void BreakIntoWords()
         {
             textMass = str.Split('.','?','!');
 
-            //Console.WriteLine(str);
             Console.WriteLine(textMass[2]);
             Console.WriteLine("");
             Console.WriteLine("");
         }
-        public void WrapInSentence()
+        public void WrapInSentence(int index)
         {
+            Console.WriteLine("Your decide swap letters in {0} sentence", index);
             string[] words;
-            textMass[2] = textMass[2].Trim();
-            words = textMass[2].Split(' ');
+            textMass[index-1] = textMass[index-1].Trim();
+            words = textMass[index-1].Split(' ');
 
             for(int i = 0; i < words.Length; i++)
             {
