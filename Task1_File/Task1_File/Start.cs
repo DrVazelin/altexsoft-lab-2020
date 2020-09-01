@@ -45,7 +45,7 @@ namespace Task1_File
                 switch (choise)
                 {
                     case "change":
-                        FileCheges test = new FileCheges();
+                        FileChanger test = new FileChanger();
                         test.Delete(); 
                         break;
                     case "count":

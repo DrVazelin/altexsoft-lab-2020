@@ -2,17 +2,17 @@
 
 namespace Task1_File.Servises
 {
-    public class FileCheges
+    public class FileChanger
     {
         string str;
         string delete;
-        string path = Environment.CurrentDirectory + @"\File.txt";
+        string path = Environment.CurrentDirectory;
 
         public void Delete()
         {
             
-            File File = new File();
-            str=File.ReadFromFile(path);
+            File file = new File();
+            str = file.ReadUserFile(path);
 
             if (str == null) { Console.WriteLine("File not found"); }
             else
@@ -28,7 +28,7 @@ namespace Task1_File.Servises
                     {
                         str = str.Replace(delete, "");
                         Console.WriteLine(str);
-                        File.SaveInFile(str);
+                        file.SaveInFile(str);
                         break;
                     }
                     else

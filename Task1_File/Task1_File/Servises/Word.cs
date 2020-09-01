@@ -4,15 +4,16 @@ namespace Task1_File.Servises
 {
     public class Word
     {
-        string path = Environment.CurrentDirectory + @"\File.txt";
+        string path = Environment.CurrentDirectory;
 
         string str;
         public Word()
         {
             Console.WriteLine("You decide to count words in file");
 
-            File File = new File();
-            str = File.ReadFromFile(path);
+            File file = new File();
+            str = file.ReadUserFile(path);
+
             if (str == null) { Console.WriteLine("File not found"); }
             else
             {

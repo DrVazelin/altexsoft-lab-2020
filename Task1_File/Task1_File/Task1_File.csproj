@@ -46,7 +46,7 @@
     <Compile Include="Assistant\Sort.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Servises\FileCheges.cs" />
+    <Compile Include="Servises\FileChanger.cs" />
     <Compile Include="Assistant\File.cs" />
     <Compile Include="Servises\FileExplorer.cs" />
     <Compile Include="Assistant\Text.cs" />

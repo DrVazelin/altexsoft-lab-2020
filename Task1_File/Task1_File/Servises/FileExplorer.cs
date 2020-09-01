@@ -19,8 +19,7 @@ namespace Task1_File.Servises
                 dirs = Directory.GetDirectories(path);
 
                 //Сортировка по алфавиту
-                Sort dirsSort = new Sort();
-                dirs=dirsSort.AlphabetSortMass(dirs);
+                Array.Sort(dirs);
 
                 Console.WriteLine("The number of files in directory {0} is {1}.",path, dirs.Length);
                 foreach (string dir in dirs)
@@ -52,8 +51,7 @@ namespace Task1_File.Servises
                     files = Directory.GetFiles(dirs[choice]);
 
                     //Сортировка по алфавиту
-                    Sort dirsSort = new Sort();
-                    files = dirsSort.AlphabetSortMass(files);
+                    Array.Sort(files);
 
                     foreach (string file in files)
                     {

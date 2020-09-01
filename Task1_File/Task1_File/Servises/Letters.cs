@@ -5,15 +5,15 @@ namespace Task1_File.Servises
     public class Letters
     {
         string str;
-        string path= Environment.CurrentDirectory + @"\File.txt";
+        string path = Environment.CurrentDirectory;
         string[] textMass;
 
         public Letters()
         {
             Console.WriteLine("You decide to swap letters");
 
-            File File = new File();
-            str = File.ReadFromFile(path);
+            File file = new File();
+            str = file.ReadUserFile(path);
 
             if(str == null) { Console.WriteLine("File not found"); }
             else
