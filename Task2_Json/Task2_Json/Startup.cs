@@ -29,11 +29,11 @@ namespace Task2_Json
                 Console.WriteLine();
 
                 Console.WriteLine("\t If your wont to see first courses write:");
-                Console.WriteLine("first");
+                Console.WriteLine("first courses");
                 Console.WriteLine();
 
                 Console.WriteLine("\t If your wont to see main courses write:");
-                Console.WriteLine("main");
+                Console.WriteLine("main courses");
                 Console.WriteLine();
 
                 Console.WriteLine("\t If your wont to see desserts write:");
@@ -52,26 +52,26 @@ namespace Task2_Json
                 switch (choice)
                 {
                     case "salad":
-                        Salads salad = new Salads(name,choice);
-                        salad.ShowRecipes();
+                        Salad salad = new Salad(name,choice);
                         break;
-                    case "first":
-
+                    case "first course":
+                        FirstCours first = new FirstCours(name, choice);
                         break;
-                    case "main":
-
+                    case "main course":
+                        MainCours main = new MainCours(name, choice);
                         break;
                     case "dessert":
-
+                        Dessert dessert = new Dessert(name, choice);
                         break;
                     case "beverage":
-
+                        Beverage beverage = new Beverage(name, choice);
                         break;
                     case "q":
                         Console.WriteLine("Your decided exit");
                         break;
                     default:
                         Console.WriteLine("Invalid input");
+                        Console.ReadLine();
                         break;
                 }
 

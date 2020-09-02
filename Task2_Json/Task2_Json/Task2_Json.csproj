@@ -73,12 +73,13 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Beverages.cs" />
+    <Compile Include="Services\Beverage.cs" />
     <Compile Include="Services\Categories.cs" />
-    <Compile Include="Services\Desserts.cs" />
-    <Compile Include="Services\FirstCourses.cs" />
-    <Compile Include="Services\MainCourses.cs" />
-    <Compile Include="Services\Salates.cs" />
+    <Compile Include="Services\Dessert.cs" />
+    <Compile Include="Services\FirstCours.cs" />
+    <Compile Include="Services\MainCours.cs" />
+    <Compile Include="Services\MainCategori.cs" />
+    <Compile Include="Services\Salad.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Structures\ColectionRecipe.cs" />
     <Compile Include="Structures\Recipe.cs" />

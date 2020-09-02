@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task2_Json.Structures
 {
-    class ColectionRecipe
+    public class ColectionRecipe
     {
         public List<Recipe> ListRecipe { get; set; }
     }
