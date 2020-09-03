@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="interfaces\IRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Beverage.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Structures\ColectionRecipe.cs" />
     <Compile Include="Structures\Recipe.cs" />
     <Compile Include="Structures\Сategories.cs" />
+    <Compile Include="Unit of Work\DishRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

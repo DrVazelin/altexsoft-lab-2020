@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task2_Json.Services
 {
@@ -10,7 +6,7 @@ namespace Task2_Json.Services
     {
         public Salad(string name, string category)
         {
-            patch = Environment.CurrentDirectory + @"\Json\Categories\Salate.json";
+            path = Environment.CurrentDirectory + @"\Json\Categories\Salate.json";
 
             Choice(name, category);
         }

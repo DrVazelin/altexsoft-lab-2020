@@ -1,18 +1,15 @@
 ﻿using System;
 using Task2_Json.Structures;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Text.Json;
 using System.IO;
-using System.Text.Json.Serialization;
+using Task2_Json.Unit_of_Work;
 
 namespace Task2_Json.Services
 {
     class MainCategori : Categories
     {
-        public override string patch { get; set; }
+        public override string path { get; set; }
 
         public override void Choice(string name, string category)
         {
@@ -55,26 +52,25 @@ namespace Task2_Json.Services
 
         protected override void ShowAll(string name, string category)
         {
-            string jsonString = File.ReadAllText(patch);
+            string jsonString = File.ReadAllText(path);
 
             var dishes = new List<Recipe>();
 
-            dishes = JsonSerializer.Deserialize<List<Recipe>>(jsonString);
+            DishRepository unitOfWork = new DishRepository();
+            
 
             Console.WriteLine(name + ", plase write number of " +category+ " to see all information");
             Console.WriteLine();
 
-            for(int i = 0; i < dishes.Count; i++)
+            for(int i = 0; i < unitOfWork.ShowAll(path).ListRecipe.Count; i++)
             {
-                Console.WriteLine(i+" : "+dishes[i].Name);
+                Console.WriteLine(i+" : "+ unitOfWork.ShowAll(path).ListRecipe[i].Name);
             }
             int choice = Convert.ToInt32(Console.ReadLine());
 
-            ColectionRecipe dishesList = new ColectionRecipe();
-            dishesList.ListRecipe = dishes;
 
-            if (choice < 0 || choice > dishes.Count) Console.WriteLine("incorrect input");
-            else ShowRecipe(name, category, choice, dishesList);
+            if (choice < 0 || choice > unitOfWork.ShowAll(path).ListRecipe.Count) Console.WriteLine("incorrect input");
+            else ShowRecipe(name, category, choice, unitOfWork.ShowAll(path));
 
         }
 
@@ -105,7 +101,7 @@ namespace Task2_Json.Services
             Console.WriteLine(name + ", you decided to add a recipe");
             Console.WriteLine();
 
-            string jsonString = File.ReadAllText(patch);
+            string jsonString = File.ReadAllText(path);
 
             var dishes = new List<Recipe>();
 
@@ -144,7 +140,7 @@ namespace Task2_Json.Services
             };
 
             jsonString = JsonSerializer.Serialize(dishes, options);
-            File.WriteAllText(patch, jsonString);
+            File.WriteAllText(path, jsonString);
         }
     }
 }

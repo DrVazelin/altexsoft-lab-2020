@@ -5,7 +5,7 @@ namespace Task2_Json.Services
 {
     public abstract class Categories
     {
-        public abstract string patch { get; set; }
+        public abstract string path { get; set; }
         public void Сonfirm(string name, string category)
         {
             Console.WriteLine("Hellow "+name+", your choise "+ category+ " category. ");
