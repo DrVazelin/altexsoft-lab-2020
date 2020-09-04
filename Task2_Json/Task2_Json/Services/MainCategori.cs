@@ -52,40 +52,40 @@ namespace Task2_Json.Services
 
         protected override void ShowAll(string name, string category)
         {
-            string jsonString = File.ReadAllText(path);
 
-            var dishes = new List<Recipe>();
+            ColectionRecipe dishes = new ColectionRecipe();
 
-            DishRepository unitOfWork = new DishRepository();
-            
+            JsonRepository fileWork = new JsonRepository();
+
+            dishes = fileWork.Read(path);
 
             Console.WriteLine(name + ", plase write number of " +category+ " to see all information");
             Console.WriteLine();
 
-            for(int i = 0; i < unitOfWork.ShowAll(path).ListRecipe.Count; i++)
+            for(int i = 0; i < dishes.ListRecipe.Count; i++)
             {
-                Console.WriteLine(i+" : "+ unitOfWork.ShowAll(path).ListRecipe[i].Name);
+                Console.WriteLine(i+" : "+ dishes.ListRecipe[i].Name);
             }
             int choice = Convert.ToInt32(Console.ReadLine());
 
 
-            if (choice < 0 || choice > unitOfWork.ShowAll(path).ListRecipe.Count) Console.WriteLine("incorrect input");
-            else ShowRecipe(name, category, choice, unitOfWork.ShowAll(path));
+            if (choice < 0 || choice > dishes.ListRecipe.Count) Console.WriteLine("incorrect input");
+            else ShowRecipe(name, category, choice, dishes.ListRecipe[choice]);
 
         }
 
-        protected override void ShowRecipe(string name, string category,int choice,ColectionRecipe dishes)
+        protected override void ShowRecipe(string name, string category,int choice,Recipe dish)
         {
             Console.WriteLine("Name :");
-            Console.WriteLine(dishes.ListRecipe[choice].Name);
+            Console.WriteLine(dish.Name);
             Console.WriteLine();
 
             Console.WriteLine("Description :");
-            Console.WriteLine(dishes.ListRecipe[choice].Description);
+            Console.WriteLine(dish.Description);
             Console.WriteLine();
 
             Console.WriteLine("Cooking :");
-            Console.WriteLine(dishes.ListRecipe[choice].Cooking);
+            Console.WriteLine(dish.Cooking);
             Console.WriteLine();
 
             Console.ReadLine();
@@ -101,11 +101,9 @@ namespace Task2_Json.Services
             Console.WriteLine(name + ", you decided to add a recipe");
             Console.WriteLine();
 
-            string jsonString = File.ReadAllText(path);
-
-            var dishes = new List<Recipe>();
-
-            dishes = JsonSerializer.Deserialize<List<Recipe>>(jsonString);
+            ColectionRecipe dishes = new ColectionRecipe();
+            JsonRepository jsonRepository = new JsonRepository();
+            dishes = jsonRepository.Read(path);
 
             while (true)
             {
@@ -120,13 +118,13 @@ namespace Task2_Json.Services
 
                 Recipe dish = new Recipe()
                 {
-                    Categories =category,
+                    Categories = category,
                     Name = dishName,
                     Description = description,
                     Cooking = cooking
                 };
 
-                dishes.Add(dish);
+                dishes.ListRecipe.Add(dish);
 
                 Console.WriteLine("Ok, we added your "+category);
                 Console.WriteLine("if your wont to exit write q");
@@ -134,13 +132,8 @@ namespace Task2_Json.Services
                 if ("q" == Console.ReadLine()) { break; }
             }
 
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true
-            };
-
-            jsonString = JsonSerializer.Serialize(dishes, options);
-            File.WriteAllText(path, jsonString);
+            jsonRepository.Update(path, dishes);
+            
         }
     }
 }

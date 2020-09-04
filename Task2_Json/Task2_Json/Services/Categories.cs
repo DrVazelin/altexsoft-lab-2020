@@ -12,7 +12,7 @@ namespace Task2_Json.Services
         }
         public abstract void Choice(string name, string category);
         protected abstract void ShowAll(string name, string category);
-        protected abstract void ShowRecipe(string name, string category, int choice, ColectionRecipe dishes);
+        protected abstract void ShowRecipe(string name, string category, int choice, Recipe dishes);
         protected abstract void AddRecipe(string name, string category);
         
     }
