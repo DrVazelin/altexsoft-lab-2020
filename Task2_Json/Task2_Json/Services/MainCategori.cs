@@ -55,7 +55,7 @@ namespace Task2_Json.Services
 
             ColectionRecipe dishes = new ColectionRecipe();
 
-            JsonRepository fileWork = new JsonRepository();
+            JsonDishRepository fileWork = new JsonDishRepository();
 
             dishes = fileWork.Read(path);
 
@@ -102,7 +102,7 @@ namespace Task2_Json.Services
             Console.WriteLine();
 
             ColectionRecipe dishes = new ColectionRecipe();
-            JsonRepository jsonRepository = new JsonRepository();
+            JsonDishRepository jsonRepository = new JsonDishRepository();
             dishes = jsonRepository.Read(path);
 
             while (true)
