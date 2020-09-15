@@ -84,7 +84,7 @@ namespace Task2_Json.Unit_of_Work
                 WriteIndented = true
             };
 
-            string jsonString = JsonSerializer.Serialize(dishes, options);
+            string jsonString = JsonSerializer.Serialize(dishes.ListRecipe, options);
             File.WriteAllText(path, jsonString);
         }
 

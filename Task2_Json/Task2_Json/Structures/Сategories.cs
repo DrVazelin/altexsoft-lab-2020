@@ -4,7 +4,7 @@ namespace Task2_Json.Structures
 {
     public class Сategories
     {
-        public string Salate { get; set; }
+        public string salate { get; set; }
         [JsonPropertyName("first_courses")]
         public string first { get; set; }
         [JsonPropertyName("main_courses")]
