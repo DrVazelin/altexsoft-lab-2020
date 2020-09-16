@@ -7,7 +7,8 @@ namespace Task2_Json
         static void Main(string[] args)
         {
             Startup demo = new Startup();
-            demo.ShowСategories();
+            //demo.ShowСategories();
+            demo.ShowСategoriesFromFile();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.IO;
 using System.Text.Json;
 using Task2_Json.interfaces;
 using Task2_Json.Structures;
+using System;
 
 namespace Task2_Json.Unit_of_Work
 {
@@ -12,7 +13,7 @@ namespace Task2_Json.Unit_of_Work
         {
             try
             {
-                if (File.Exists(path)) { throw new System.Exception("File is all ready create"); }
+                if (File.Exists(path)) { throw new Exception("File is all ready create"); }
             }
             catch (DirectoryNotFoundException) { }
 
@@ -71,7 +72,7 @@ namespace Task2_Json.Unit_of_Work
                     else { buf.ListRecipe.Add(dishes.ListRecipe[i]); }
                 }
             }
-            else { throw new System.Exception("Incorect id"); }
+            else { throw new Exception("Incorect id"); }
 
             Save(buf, path);
         }
