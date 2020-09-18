@@ -18,7 +18,7 @@ namespace Task2_Json.Unit_of_Work
             catch (DirectoryNotFoundException) { }
 
 
-            Save(recipes,path + @"\" + fileName);
+            Save(recipes, path + @"\" + fileName);
 
         }
 
@@ -47,7 +47,7 @@ namespace Task2_Json.Unit_of_Work
             ColectionRecipe dishes = new ColectionRecipe();
             dishes = Read(path);
 
-            for(int i = dishes.ListRecipe.Count; i < add.ListRecipe.Count; i++)
+            for (int i = dishes.ListRecipe.Count; i < add.ListRecipe.Count; i++)
             {
                 dishes.ListRecipe.Add(add.ListRecipe[i]);
             }
@@ -55,18 +55,18 @@ namespace Task2_Json.Unit_of_Work
             Save(dishes, path);
         }
 
-        public void Delete(string path,int id)
+        public void Delete(string path, int id)
         {
 
-            ColectionRecipe dishes,buf = new ColectionRecipe();
+            ColectionRecipe dishes, buf = new ColectionRecipe();
 
             dishes = Read(path);
 
             buf.ListRecipe[0] = dishes.ListRecipe[0];
 
-            if(id > 1 || id <= dishes.ListRecipe.Count)
+            if (id > 1 || id <= dishes.ListRecipe.Count)
             {
-                for(int i = 0; i < dishes.ListRecipe.Count; i++)
+                for (int i = 0; i < dishes.ListRecipe.Count; i++)
                 {
                     if (i == id) { }
                     else { buf.ListRecipe.Add(dishes.ListRecipe[i]); }

@@ -1,8 +1,5 @@
 ﻿using System;
 using Task2_Json.Structures;
-using System.Collections.Generic;
-using System.Text.Json;
-using System.IO;
 using Task2_Json.Unit_of_Work;
 
 namespace Task2_Json.Services
@@ -38,7 +35,7 @@ namespace Task2_Json.Services
                         AddRecipe(name, category);
                         break;
                     case "q":
-                        Console.WriteLine("Your decided exit from "+category);
+                        Console.WriteLine("Your decided exit from " + category);
                         Console.ReadLine();
                         break;
                     default:
@@ -59,12 +56,12 @@ namespace Task2_Json.Services
 
             dishes = fileWork.Read(path);
 
-            Console.WriteLine(name + ", plase write number of " +category+ " to see all information");
+            Console.WriteLine(name + ", plase write number of " + category + " to see all information");
             Console.WriteLine();
 
-            for(int i = 0; i < dishes.ListRecipe.Count; i++)
+            for (int i = 0; i < dishes.ListRecipe.Count; i++)
             {
-                Console.WriteLine(i+" : "+ dishes.ListRecipe[i].Name);
+                Console.WriteLine(i + " : " + dishes.ListRecipe[i].Name);
             }
             int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -74,7 +71,7 @@ namespace Task2_Json.Services
 
         }
 
-        protected override void ShowRecipe(string name, string category,int choice,Recipe dish)
+        protected override void ShowRecipe(string name, string category, int choice, Recipe dish)
         {
             Console.WriteLine("Name :");
             Console.WriteLine(dish.Name);
@@ -112,7 +109,7 @@ namespace Task2_Json.Services
                 dishName = Console.ReadLine();
                 Console.WriteLine("write description of your new " + category);
                 description = Console.ReadLine();
-                Console.WriteLine("Describe step by step how to prepare your "+category);
+                Console.WriteLine("Describe step by step how to prepare your " + category);
                 cooking = Console.ReadLine();
                 Console.WriteLine();
 
@@ -126,14 +123,14 @@ namespace Task2_Json.Services
 
                 dishes.ListRecipe.Add(dish);
 
-                Console.WriteLine("Ok, we added your "+category);
+                Console.WriteLine("Ok, we added your " + category);
                 Console.WriteLine("if your wont to exit write q");
 
                 if ("q" == Console.ReadLine()) { break; }
             }
 
             jsonRepository.Update(path, dishes);
-            
+
         }
     }
 }

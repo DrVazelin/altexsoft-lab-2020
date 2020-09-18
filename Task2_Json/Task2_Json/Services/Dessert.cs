@@ -2,7 +2,7 @@
 
 namespace Task2_Json.Services
 {
-    class Dessert:MainCategori
+    class Dessert : MainCategori
     {
         public Dessert(string name, string category)
         {
@@ -12,5 +12,4 @@ namespace Task2_Json.Services
         }
     }
 }
-
 

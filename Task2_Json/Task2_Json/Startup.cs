@@ -53,7 +53,7 @@ namespace Task2_Json
                 switch (choice)
                 {
                     case "salad":
-                        Salad salad = new Salad(name,choice);
+                        Salad salad = new Salad(name, choice);
                         break;
                     case "first course":
                         FirstCours first = new FirstCours(name, choice);
@@ -101,17 +101,17 @@ namespace Task2_Json
                     Console.WriteLine(s);
                     Console.WriteLine();
                 }
-                
+
                 Console.WriteLine("if your wont to exit push q");
 
                 choice = Console.ReadLine();
 
                 if (choice == "q") break;
-                else if (Array.IndexOf(readText, choice)==-1) { Console.WriteLine("invalide input"); }
+                else if (Array.IndexOf(readText, choice) == -1) { Console.WriteLine("invalide input"); }
                 else
                 {
 
-                    UnknownDish salad = new UnknownDish(name, choice, Environment.CurrentDirectory + @"\Json\Categories\"+choice+".json");
+                    UnknownDish salad = new UnknownDish(name, choice, Environment.CurrentDirectory + @"\Json\Categories\" + choice + ".json");
                 }
 
             }

@@ -2,7 +2,7 @@
 
 namespace Task2_Json.Services
 {
-    class Beverage:MainCategori
+    class Beverage : MainCategori
     {
         public Beverage(string name, string category)
         {

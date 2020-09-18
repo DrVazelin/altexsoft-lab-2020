@@ -2,7 +2,7 @@
 
 namespace Task2_Json.Services
 {
-    class FirstCours:MainCategori
+    class FirstCours : MainCategori
     {
         public FirstCours(string name, string category)
         {
@@ -12,3 +12,4 @@ namespace Task2_Json.Services
         }
     }
 }
+

@@ -8,12 +8,12 @@ namespace Task2_Json.Services
         public abstract string path { get; set; }
         public void Сonfirm(string name, string category)
         {
-            Console.WriteLine("Hellow "+name+", your choise "+ category+ " category. ");
+            Console.WriteLine("Hellow " + name + ", your choise " + category + " category. ");
         }
         public abstract void Choice(string name, string category);
         protected abstract void ShowAll(string name, string category);
         protected abstract void ShowRecipe(string name, string category, int choice, Recipe dishes);
         protected abstract void AddRecipe(string name, string category);
-        
+
     }
 }
