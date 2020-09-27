@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Task2_Json.interfaces
+namespace Task2_Json.DAL
 {
     interface IRepository<T> where T : class
     {

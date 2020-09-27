@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
-using Task2_Json.interfaces;
 using Task2_Json.Structures;
 using System;
 
-namespace Task2_Json.Unit_of_Work
+namespace Task2_Json.DAL
 {
-    public class JsonDishRepository : IRepository<ColectionRecipe>
+    public class JsonDishRepository : IRepository<CollectionRecipe>
     {
-        public void Create(string path, string fileName, ColectionRecipe recipes)
+        public void Create(string path, string fileName, CollectionRecipe recipes)
         {
             try
             {
@@ -22,7 +21,7 @@ namespace Task2_Json.Unit_of_Work
 
         }
 
-        public ColectionRecipe Read(string path)
+        public CollectionRecipe Read(string path)
         {
             try
             {
@@ -34,7 +33,7 @@ namespace Task2_Json.Unit_of_Work
 
             string jsonString = File.ReadAllText(path);
 
-            ColectionRecipe listDishes = new ColectionRecipe();
+            CollectionRecipe listDishes = new CollectionRecipe();
 
             listDishes.ListRecipe = JsonSerializer.Deserialize<List<Recipe>>(jsonString);
 
@@ -42,9 +41,9 @@ namespace Task2_Json.Unit_of_Work
 
         }
 
-        public void Update(string path, ColectionRecipe add)
+        public void Update(string path, CollectionRecipe add)
         {
-            ColectionRecipe dishes = new ColectionRecipe();
+            CollectionRecipe dishes = new CollectionRecipe();
             dishes = Read(path);
 
             for (int i = dishes.ListRecipe.Count; i < add.ListRecipe.Count; i++)
@@ -58,7 +57,7 @@ namespace Task2_Json.Unit_of_Work
         public void Delete(string path, int id)
         {
 
-            ColectionRecipe dishes, buf = new ColectionRecipe();
+            CollectionRecipe dishes, buf = new CollectionRecipe();
 
             dishes = Read(path);
 
@@ -78,7 +77,7 @@ namespace Task2_Json.Unit_of_Work
         }
 
 
-        private void Save(ColectionRecipe dishes, string path)
+        private void Save(CollectionRecipe dishes, string path)
         {
             var options = new JsonSerializerOptions
             {

@@ -1,4 +1,5 @@
 ﻿using System;
+using Task2_Json.PL;
 
 namespace Task2_Json
 {
@@ -6,9 +7,7 @@ namespace Task2_Json
     {
         static void Main(string[] args)
         {
-            Startup demo = new Startup();
-            //demo.ShowСategories();
-            demo.ShowСategoriesFromFile();
+            Welcome welcome = new Welcome();
         }
     }
 }

@@ -1,17 +1,12 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Task2_Json.Structures
 {
     public class Сategories
     {
-        public string salate { get; set; }
-        [JsonPropertyName("first_courses")]
-        public string first { get; set; }
-        [JsonPropertyName("main_courses")]
-        public string main { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
 
-        public string dessert { get; set; }
-
-        public string beverage { get; set; }
     }
 }
