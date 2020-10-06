@@ -48,11 +48,17 @@ namespace Task2_Json.BL
 
         public bool AddRecipe(Recipe recipe)
         {
+            Console.WriteLine(recipe.Ingredients.Values);
+            Console.WriteLine(recipe.Ingredients.Keys);
             //возможность добавить проверки в будущем
             if (true)
             {
                 CollectionRecipe dishes = new CollectionRecipe();
                 JsonDishRepository jsonRepository = new JsonDishRepository();
+                Id id = new Id(path);
+
+                recipe.Id = id.id+1;
+
                 dishes = jsonRepository.Read(path);
                 dishes.ListRecipe.Add(recipe);
 

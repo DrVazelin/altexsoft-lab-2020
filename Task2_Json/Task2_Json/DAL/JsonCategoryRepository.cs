@@ -39,14 +39,38 @@ namespace Task2_Json.DAL
             return collectionCategories;
         }
 
-        public void Update(string path, CollectionCategories item)
+        public void Update(string path, CollectionCategories add)
         {
-            throw new NotImplementedException();
+            CollectionCategories collectionCategories = new CollectionCategories();
+            collectionCategories = Read(path);
+
+            for (int i = collectionCategories.Сategories.Count; i < add.Сategories.Count; i++)
+            {
+                collectionCategories.Сategories.Add(add.Сategories[i]);
+            }
+
+            Save(collectionCategories, path);
         }
 
         public void Delete(string path, int id)
         {
-            throw new NotImplementedException();
+            CollectionCategories collectionCategories, buf = new CollectionCategories();
+
+            collectionCategories = Read(path);
+
+            buf.Сategories[0] = collectionCategories.Сategories[0];
+
+            if (id > 1 || id <= collectionCategories.Сategories.Count)
+            {
+                for (int i = 0; i < collectionCategories.Сategories.Count; i++)
+                {
+                    if (i == id) { }
+                    else { buf.Сategories.Add(collectionCategories.Сategories[i]); }
+                }
+            }
+            else { throw new Exception("Incorect id"); }
+
+            Save(buf, path);
         }
 
         private void Save(CollectionCategories collectionCategories, string path)
